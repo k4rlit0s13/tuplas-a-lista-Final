@@ -21,7 +21,7 @@ Usuario usted seleccionó la categoría {categoria[option]} """)
 
 
 if option == 0:
-     ProductosDulces=list((
+     ProductosDulces=[
      "Croissants",
      "Donas",
      "tortillas",
@@ -33,9 +33,9 @@ if option == 0:
      "Palmeras",
      "Conchas",
      "promo conchas x2",
-     "promo croissants x3",))
+     "promo croissants x3",]
      
-     ValorDulce=tuple((
+     ValorDulce=[
      3500,
      2000, 
      60000, 
@@ -49,7 +49,7 @@ if option == 0:
      3000,
      7000
 
-     ))
+     ]
      
      for i, val in enumerate(ProductosDulces):
         print(f"""{i}. {val} ${ValorDulce[i]}""")
