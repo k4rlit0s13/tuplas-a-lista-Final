@@ -1,3 +1,7 @@
+
+#PROFE este codigo la verdad me da problemas, como solucionarlos ni idea, todo existe pero al revelar solo revela la lista 3 el resto funcionan y todo pero no aparece el listado
+
+
 print("Hola usuario, bienvenido a la selección de productos de la panaderia Carlos :D!")
 
 print("""
@@ -17,17 +21,19 @@ Usuario usted seleccionó la categoría {categoria[option]} """)
 
 
 if option == 0:
-     ProductosDulces=tuple((
+     ProductosDulces=list((
      "Croissants",
      "Donas",
-     "Pasteles",
+     "tortillas",
      "Galletas",
      "Pan dulce",
      "Ensaimadas",
      "Tartaletas",
      "Bizcochos",
      "Palmeras",
-     "Conchas",))
+     "Conchas",
+     "promo conchas x2",
+     "promo croissants x3",))
      
      ValorDulce=tuple((
      3500,
@@ -40,20 +46,21 @@ if option == 0:
      45000, 
      2500, 
      2000,
+     3000,
+     7000
+
      ))
      
      for i, val in enumerate(ProductosDulces):
         print(f"""{i}. {val} ${ValorDulce[i]}""")
-        for i, val in enumerate(ProductosDulces):
-           print(f"""{i}. {val} ${ValorDulce[i]}""")
-           opcion=int(input(""))
-           cantidad=int(input("cuantos quiere: "))
-           print(f"Usuario usted seleccionó el producto {ProductosDulces[opcion]} con un valor de ${ValorDulce[opcion]*cantidad}")
-           dinero=int(input("Ingrese la cantidad de dinero disponible: "))
-           vueltos=(ValorDulce[opcion]*cantidad)-dinero 
-           if dinero>=ValorDulce[opcion]*cantidad:
+        opcion=int(input(''))
+        cantidad=int(input("cuantos quiere: "))
+        print(f"""Usuario usted seleccionó el producto {ProductosDulces[opcion]} con un valor de ${ValorDulce[opcion]*cantidad}""")
+        dinero=int(input("Ingrese la cantidad de dinero disponible: "))
+        vueltos=(ValorDulce[opcion]*cantidad)-dinero 
+        if dinero>=ValorDulce[opcion]*cantidad:
               print(f"Usuario usted compro el producto {ProductosDulces[opcion]} con un valor de ${ValorDulce[opcion]*cantidad}, sus vueltos son ${vueltos}")
-           else:
+        else:
               print(f"Usuario el producto que desea comprar {ProductosDulces[opcion]} con un valor de ${ValorDulce[opcion]*cantidad} le hacen falta ${(-vueltos)} ")
 
 
@@ -71,6 +78,8 @@ elif option == 1:
      "Pan de centeno",
      "Pan de aceitunas",
      "Pan de hierbas",
+     "promo x5 Baguettes a 20000",
+     "promo x5 pan hiervas a 2000,"
      ))
  
      ValorSal=tuple((
@@ -84,12 +93,14 @@ elif option == 1:
      5500,
      4500,
      4000,
+     20000,
+     2000
      ))
      for i, val in enumerate(ProductosSal):
         print(f"""{i}. {val} ${ValorSal[i]}""")
         opcion=int(input(""))
         cantidad=int(input("cuantos quiere: "))
-        print(f"Usuario usted seleccionó el producto {ProductosSal[opcion]} con un valor de ${ValorSal[opcion]*cantidad}")
+        print(f"""Usuario usted seleccionó el producto {ProductosSal[opcion]} con un valor de ${ValorSal[opcion]*cantidad}""")
         dinero=int(input("Ingrese la cantidad de dinero disponible: "))
         vueltos=(ValorSal[opcion]*cantidad)-dinero 
         if dinero>=ValorSal[opcion]*cantidad:
@@ -111,8 +122,8 @@ elif option == 2:
       "Tarta Sacher (Sachertorte)",
       "Torta de tres leches",
       "Torta de nueces y caramelo (Sticky toffee cake)",
-      "2x1 en pastel de torta de chocolate"
-      "2x1 en pastel zanahoria"
+      "2x1 en pastel de torta de chocolate",
+      "2x1 en pastel zanahoria",
       ))
      
       ValorPastel=tuple((
@@ -134,7 +145,7 @@ elif option == 2:
          
       opcion=int(input(""))
       cantidad=int(input("cuantos quiere: "))
-      print(f"Usuario usted seleccionó el producto {ProductosPasteles[opcion]} con un valor de ${ValorPastel[opcion]*cantidad}")
+      print(f"""Usuario usted seleccionó el producto {ProductosPasteles[opcion]} con un valor de ${ValorPastel[opcion]*cantidad}""")
       dinero=int(input("Ingrese la cantidad de dinero disponible: "))
       vueltos=(ValorPastel[opcion]*cantidad)-dinero
       if dinero>=ValorPastel[opcion]*cantidad:
